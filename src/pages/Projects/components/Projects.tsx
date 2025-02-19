@@ -1,4 +1,4 @@
-import React, { useState, useEffect, MouseEvent } from 'react';
+import { useState, useEffect, MouseEvent } from 'react';
 
 function Projects() {
   const [projects, setProjects] = useState<any[]>([]);

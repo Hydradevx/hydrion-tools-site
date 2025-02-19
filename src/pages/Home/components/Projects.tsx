@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './styles.css';
 
 const projectData = [
@@ -31,7 +31,7 @@ function Projects() {
   const [hoveredProject, setHoveredProject] = useState(null);
   const [hoverPosition, setHoverPosition] = useState({ x: 0, y: 0 });
 
-  const handleMouseMove = (e: any, id: number) => {
+  const handleMouseMove = (e: any, id: any) => {
     const rect = e.currentTarget.getBoundingClientRect();
     setHoverPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
     setHoveredProject(id);
