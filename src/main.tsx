@@ -2,9 +2,9 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import HomePage from './pages/Home/HomePage.jsx';
-import Discord from './pages/Discord/Discord.jsx';
-import ProjectsPage from './pages/Projects/ProjectsPage.jsx';
+import HomePage from './pages/Home/HomePage.tsx';
+import Discord from './pages/Discord/Discord.tsx';
+import ProjectsPage from './pages/Projects/ProjectsPage.tsx';
 
 import './index.css'
 
