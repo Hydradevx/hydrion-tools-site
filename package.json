@@ -1,6 +1,7 @@
 {
   "name": "hydrion-tools-site",
   "private": true,
+  "homepage": "https://Hydradevx.github.io/hydrion-tools-site",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
