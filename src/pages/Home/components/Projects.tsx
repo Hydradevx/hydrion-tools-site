@@ -11,13 +11,6 @@ const projectData = [
   },
   {
     id: 2,
-    name: 'Web Developing',
-    description:
-      'This website was halfly developed by syringeedy our beloved developer',
-    backgroundImage: 'https://avatars.githubusercontent.com/u/194689449?v=4',
-  },
-  {
-    id: 3,
     name: 'Server Bot',
     description:
       'We make any type of personalized bots for your server, for a cheap price',
@@ -25,7 +18,7 @@ const projectData = [
       'https://imgs.search.brave.com/Z74Yt65JqBmwBTthZKUAHDK9gSWvqN6m-NfV7JU27JQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTI5/NjkwNDQwOS9waG90/by9hcnRpZmljaWFs/LWludGVsbGlnZW5j/ZS1hbmQtdGVjaG5v/bG9neS5qcGc_cz02/MTJ4NjEyJnc9MCZr/PTIwJmM9LURGaExo/U2s5YWxjNGlBTy1r/eTJrOUJNdzAxdWtk/UUVpdzBldEQ3eTRk/cz0',
   },
   {
-    id: 4,
+    id: 3,
     name: 'Server Management',
     description:
       'Our co-owner Yer Goat manages your server with our team so you dont need to worry about staffs.',
@@ -38,7 +31,7 @@ function Projects() {
   const [hoveredProject, setHoveredProject] = useState(null);
   const [hoverPosition, setHoverPosition] = useState({ x: 0, y: 0 });
 
-  const handleMouseMove = (e: any, id: any) => {
+  const handleMouseMove = (e: any, id: number) => {
     const rect = e.currentTarget.getBoundingClientRect();
     setHoverPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
     setHoveredProject(id);

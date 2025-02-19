@@ -1,35 +1,28 @@
-import eslint from "@eslint/js";
-import prettier from "eslint-config-prettier";
-import react from "eslint-plugin-react";
-import reactHooks from "eslint-plugin-react-hooks";
-import jsxA11y from "eslint-plugin-jsx-a11y";
-import tseslint from "@typescript-eslint/eslint-plugin";
-import tsParser from "@typescript-eslint/parser";
+import js from '@eslint/js'
+import globals from 'globals'
+import reactHooks from 'eslint-plugin-react-hooks'
+import reactRefresh from 'eslint-plugin-react-refresh'
+import tseslint from 'typescript-eslint'
 
-export default [
-  eslint.configs.recommended,
-  prettier,
+export default tseslint.config(
+  { ignores: ['dist'] },
   {
-    files: ["**/*.ts", "**/*.tsx"],
+    extends: [js.configs.recommended, ...tseslint.configs.recommended],
+    files: ['**/*.{ts,tsx}'],
     languageOptions: {
-      parser: tsParser,
-      parserOptions: {
-        project: "./tsconfig.json",
-        sourceType: "module",
-      },
+      ecmaVersion: 2020,
+      globals: globals.browser,
     },
     plugins: {
-      "@typescript-eslint": tseslint,
-      react,
-      "react-hooks": reactHooks,
-      "jsx-a11y": jsxA11y,
+      'react-hooks': reactHooks,
+      'react-refresh': reactRefresh,
     },
     rules: {
-      "prettier/prettier": "error",
-      "react/react-in-jsx-scope": "off",
-      "react-hooks/rules-of-hooks": "error",
-      "react-hooks/exhaustive-deps": "warn",
-      "@typescript-eslint/no-unused-vars": "warn",
+      ...reactHooks.configs.recommended.rules,
+      'react-refresh/only-export-components': [
+        'warn',
+        { allowConstantExport: true },
+      ],
     },
   },
-];
+)
