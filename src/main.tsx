@@ -1,12 +1,12 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import HomePage from './pages/Home/HomePage.tsx';
-import Discord from './pages/Discord/Discord.tsx';
-import ProjectsPage from './pages/Projects/ProjectsPage.tsx';
+import HomePage from './pages/Home/HomePage';
+import Discord from './pages/Discord/Discord';
+import ProjectsPage from './pages/Projects/ProjectsPage';
 
-import './index.css'
+import './index.css';
 
 const router = createBrowserRouter([
   {
@@ -24,11 +24,11 @@ const router = createBrowserRouter([
   {
     path: '/projects',
     element: <ProjectsPage />,
-  }
-])
+  },
+]);
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <RouterProvider router={router}/>
-  </React.StrictMode>,
-)
+    <RouterProvider router={router} />
+  </React.StrictMode>
+);
